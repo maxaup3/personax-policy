@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PersonaX Children's Safety Policy - We are committed to providing a safe and healthy social creative platform for users.">
+    <meta name="keywords" content="child safety, privacy policy, COPPA, GDPR, PersonaX">
+    <meta name="author" content="PersonaX">
+    <title>PersonaX Children's Safety Policy</title>
+    <style>
+        :root {
+            /* Apple Legal Style - High-Grade Gray */
+            --black: #000000;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f7;
+            --gray-200: #f0f0f3;
+            --gray-300: #e8e8ed;
+            --gray-400: #d1d1d6;
+            --gray-500: #a1a1a6;
+            --gray-600: #86868b;
+            --gray-700: #5a5a5f;
+            --gray-800: #3a3a3f;
+            --gray-900: #1d1d1f;
+
+            /* Functional Colors - Minimal Use */
+            --accent-blue: #0071e3;
+            --accent-green: #34c759;
+            --accent-red: #ff3b30;
+
+            /* Typography Scale */
+            --fs-xs: 0.8125rem;
+            --fs-sm: 0.875rem;
+            --fs-base: 1rem;
+            --fs-lg: 1.125rem;
+            --fs-xl: 1.25rem;
+            --fs-2xl: 1.5rem;
+            --fs-3xl: 2rem;
+
+            /* Spacing */
+            --space-0: 0;
+            --space-1: 0.25rem;
+            --space-2: 0.5rem;
+            --space-3: 0.75rem;
+            --space-4: 1rem;
+            --space-6: 1.5rem;
+            --space-8: 2rem;
+            --space-12: 3rem;
+            --space-16: 4rem;
+            --space-20: 5rem;
+
+            /* Line Height */
+            --lh-tight: 1.3;
+            --lh-normal: 1.5;
+            --lh-relaxed: 1.75;
+
+            /* Other */
+            --transition-fast: 150ms cubic-bezier(0.2, 0, 0.38, 0.9);
+            --transition-normal: 300ms cubic-bezier(0.2, 0, 0.38, 0.9);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-size: var(--fs-base);
+            line-height: var(--lh-relaxed);
+            color: var(--gray-800);
+            background-color: var(--white);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .header-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: var(--space-4) var(--space-6);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: var(--fs-lg);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--black);
+            text-decoration: none;
+            transition: opacity var(--transition-fast);
+        }
+
+        .logo:hover {
+            opacity: 0.7;
+        }
+
+        .lang-switcher {
+            display: flex;
+            gap: var(--space-4);
+        }
+
+        .lang-link {
+            font-size: var(--fs-sm);
+            font-weight: 400;
+            color: var(--gray-600);
+            text-decoration: none;
+            padding: var(--space-2) 0;
+            border-bottom: 2px solid transparent;
+            transition: all var(--transition-fast);
+        }
+
+        .lang-link:hover {
+            color: var(--black);
+        }
+
+        .lang-link.active {
+            color: var(--accent-blue);
+            border-bottom-color: var(--accent-blue);
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .main-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: var(--space-16);
+            padding: var(--space-16) var(--space-6);
+        }
+
+        /* ===== HERO ===== */
+        .hero {
+            grid-column: 1 / -1;
+            margin-bottom: var(--space-12);
+        }
+
+        .hero-title {
+            font-size: var(--fs-3xl);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: var(--lh-tight);
+            color: var(--black);
+            margin-bottom: var(--space-4);
+        }
+
+        .hero-subtitle {
+            font-size: var(--fs-lg);
+            line-height: var(--lh-normal);
+            color: var(--gray-600);
+            max-width: 700px;
+            margin-bottom: var(--space-8);
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: var(--space-8);
+            font-size: var(--fs-sm);
+            color: var(--gray-500);
+        }
+
+        /* ===== TOC ===== */
+        .toc {
+            grid-row: 2;
+            grid-column: 1;
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .toc-title {
+            font-size: var(--fs-xs);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--gray-500);
+            margin-bottom: var(--space-6);
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-item {
+            margin-bottom: var(--space-3);
+        }
+
+        .toc-link {
+            display: block;
+            font-size: var(--fs-sm);
+            color: var(--gray-700);
+            text-decoration: none;
+            padding: var(--space-2) 0;
+            border-left: 2px solid transparent;
+            padding-left: var(--space-4);
+            margin-left: calc(var(--space-4) * -1);
+            transition: all var(--transition-fast);
+        }
+
+        .toc-link:hover {
+            color: var(--black);
+        }
+
+        .toc-link:focus {
+            outline: 2px solid var(--accent-blue);
+            outline-offset: 2px;
+        }
+
+        .toc-link.active {
+            color: var(--accent-blue);
+            border-left-color: var(--accent-blue);
+            font-weight: 500;
+        }
+
+        /* ===== CONTENT ===== */
+        .content {
+            grid-row: 2;
+            grid-column: 2;
+            min-width: 0;
+        }
+
+        .section {
+            margin-bottom: var(--space-16);
+            scroll-margin-top: 100px;
+        }
+
+        .section-title {
+            font-size: var(--fs-2xl);
+            font-weight: 700;
+            letter-spacing: -0.015em;
+            line-height: var(--lh-tight);
+            color: var(--black);
+            margin-bottom: var(--space-6);
+        }
+
+        .subsection-title {
+            font-size: var(--fs-xl);
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: var(--black);
+            margin-top: var(--space-8);
+            margin-bottom: var(--space-4);
+        }
+
+        .subsection-title:first-child {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: var(--space-6);
+            color: var(--gray-800);
+            line-height: var(--lh-relaxed);
+        }
+
+        a {
+            color: var(--accent-blue);
+            text-decoration: none;
+            transition: opacity var(--transition-fast);
+        }
+
+        a:hover {
+            opacity: 0.7;
+        }
+
+        a:focus {
+            outline: 2px solid var(--accent-blue);
+            outline-offset: 2px;
+        }
+
+        strong {
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        ul, ol {
+            margin-bottom: var(--space-6);
+            padding-left: var(--space-8);
+        }
+
+        li {
+            margin-bottom: var(--space-3);
+            color: var(--gray-800);
+            line-height: var(--lh-relaxed);
+        }
+
+        /* ===== HIGHLIGHT BOX ===== */
+        .highlight {
+            background-color: var(--gray-100);
+            border-left: 3px solid var(--accent-blue);
+            padding: var(--space-6);
+            margin: var(--space-8) 0;
+            border-radius: 0;
+        }
+
+        .highlight-title {
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: var(--space-3);
+            font-size: var(--fs-base);
+        }
+
+        .highlight p {
+            margin-bottom: var(--space-3);
+            color: var(--gray-700);
+            font-size: var(--fs-sm);
+        }
+
+        .highlight p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ===== TABLE ===== */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: var(--space-8) 0;
+            border: 1px solid var(--gray-300);
+            border-radius: 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: var(--fs-sm);
+        }
+
+        thead {
+            background-color: var(--gray-100);
+        }
+
+        th {
+            padding: var(--space-4);
+            text-align: left;
+            font-weight: 600;
+            color: var(--black);
+            border-bottom: 1px solid var(--gray-300);
+            letter-spacing: -0.005em;
+        }
+
+        td {
+            padding: var(--space-4);
+            border-bottom: 1px solid var(--gray-300);
+            color: var(--gray-800);
+        }
+
+        tbody tr:hover {
+            background-color: var(--gray-50);
+        }
+
+        /* ===== BADGE ===== */
+        .badge {
+            display: inline;
+            font-size: var(--fs-base);
+            font-weight: 400;
+            margin-right: var(--space-2);
+            white-space: nowrap;
+        }
+
+        .badge.success {
+            color: var(--accent-green);
+        }
+
+        .badge.error {
+            color: var(--accent-red);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            grid-column: 1 / -1;
+            margin-top: var(--space-20);
+            padding: var(--space-12) var(--space-6);
+            border-top: 1px solid var(--gray-300);
+            background-color: var(--gray-50);
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-6);
+            font-size: var(--fs-sm);
+            color: var(--gray-600);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .main-wrapper {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+                padding: var(--space-12) var(--space-6);
+            }
+
+            .toc {
+                grid-row: auto;
+                grid-column: 1;
+                position: relative;
+                top: auto;
+                margin-bottom: var(--space-8);
+                border: 1px solid var(--gray-300);
+                padding: var(--space-6);
+                background-color: var(--gray-50);
+            }
+
+            .content {
+                grid-row: auto;
+                grid-column: 1;
+            }
+        }
+
+        @media (max-width: 640px) {
+            body {
+                font-size: 0.9375rem;
+            }
+
+            .header-content {
+                padding: var(--space-3) var(--space-4);
+            }
+
+            .logo {
+                font-size: var(--fs-base);
+            }
+
+            .main-wrapper {
+                padding: var(--space-8) var(--space-4);
+                gap: var(--space-6);
+            }
+
+            .hero-title {
+                font-size: var(--fs-2xl);
+            }
+
+            .section-title {
+                font-size: var(--fs-xl);
+            }
+
+            .subsection-title {
+                font-size: var(--fs-lg);
+            }
+
+            .toc-title {
+                margin-bottom: var(--space-4);
+            }
+
+            .toc-link {
+                font-size: var(--fs-xs);
+                padding: var(--space-1) 0;
+            }
+
+            .hero-meta {
+                flex-direction: column;
+                gap: var(--space-3);
+            }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: var(--space-4);
+            }
+        }
+
+        /* ===== PRINT ===== */
+        @media print {
+            .header, .footer {
+                display: none;
+            }
+
+            .main-wrapper {
+                grid-template-columns: 1fr;
+                gap: 0;
+                padding: 0;
+            }
+
+            .toc {
+                display: none;
+            }
+
+            .section {
+                page-break-inside: avoid;
+                margin-bottom: var(--space-8);
+            }
+        }
+
+        /* ===== DARK MODE ===== */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --black: #ffffff;
+                --white: #000000;
+                --gray-50: #1a1a1a;
+                --gray-100: #242424;
+                --gray-200: #2e2e2e;
+                --gray-300: #3a3a3f;
+                --gray-400: #545454;
+                --gray-500: #707070;
+                --gray-600: #808080;
+                --gray-700: #a8a8a8;
+                --gray-800: #d0d0d0;
+                --gray-900: #e5e5e7;
+            }
+
+            body {
+                background-color: var(--white);
+            }
+
+            .header {
+                background: rgba(0, 0, 0, 0.7);
+                border-bottom-color: var(--gray-200);
+            }
+
+            .toc {
+                border-color: var(--gray-200);
+                background-color: var(--gray-50);
+            }
+
+            .highlight {
+                background-color: var(--gray-100);
+            }
+
+            .table-wrapper {
+                border-color: var(--gray-200);
+            }
+
+            thead {
+                background-color: var(--gray-100);
+            }
+
+            th {
+                border-bottom-color: var(--gray-200);
+            }
+
+            td {
+                border-bottom-color: var(--gray-200);
+            }
+
+            .footer {
+                background-color: var(--gray-50);
+                border-top-color: var(--gray-200);
+            }
+        }
+
+        /* ===== ACCESSIBILITY ===== */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--gray-400);
+            border-radius: 0;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gray-600);
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#top" class="logo">PersonaX</a>
+            <nav class="lang-switcher">
+                <a href="personax-policy-zh.html" class="lang-link">中文</a>
+                <a href="#" class="lang-link active">English</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN -->
+    <div class="main-wrapper">
+        <!-- HERO -->
+        <section class="hero" id="top">
+            <h1 class="hero-title">Children's Safety Policy</h1>
+            <p class="hero-subtitle">PersonaX is committed to providing a safe and healthy social creative platform for all users, particularly minors. This policy explains how we protect your privacy and safety.</p>
+            <div class="hero-meta">
+                <span>Updated May 14, 2026</span>
+                <span>Version 1.0</span>
+            </div>
+        </section>
+
+        <!-- TOC -->
+        <aside class="toc">
+            <div class="toc-title">Table of Contents</div>
+            <ul class="toc-list">
+                <li><a href="#section-1" class="toc-link active">Policy Overview</a></li>
+                <li><a href="#section-2" class="toc-link">Age Requirements</a></li>
+                <li><a href="#section-3" class="toc-link">Data Collection</a></li>
+                <li><a href="#section-4" class="toc-link">Social Interaction</a></li>
+                <li><a href="#section-5" class="toc-link">Account Management</a></li>
+                <li><a href="#section-6" class="toc-link">Data Security</a></li>
+                <li><a href="#section-7" class="toc-link">Violation Handling</a></li>
+                <li><a href="#section-8" class="toc-link">Parent Guidelines</a></li>
+                <li><a href="#section-9" class="toc-link">Legal Compliance</a></li>
+                <li><a href="#section-10" class="toc-link">Contact Us</a></li>
+                <li><a href="#section-11" class="toc-link">Appendix</a></li>
+            </ul>
+        </aside>
+
+        <!-- CONTENT -->
+        <main class="content">
+            <section id="section-1" class="section">
+                <h2 class="section-title">Policy Overview</h2>
+                <p>PersonaX is committed to providing a safe and healthy social creative platform for users. This policy explains how we protect the safety of users aged 13 and above, particularly minors, and how we comply with applicable laws and regulations, including but not limited to the U.S. Children's Online Privacy Protection Act (COPPA), the EU General Data Protection Regulation (GDPR), and the Digital Services Act (DSA).</p>
+            </section>
+
+            <section id="section-2" class="section">
+                <h2 class="section-title">Age Requirements and User Protection</h2>
+                <h3 class="subsection-title">Recommended Age</h3>
+                <ul>
+                    <li><strong>Minimum Age:</strong> 13 years and older</li>
+                    <li><strong>Reason:</strong> The app involves social interaction, content creation, and sharing features that require users to have basic internet safety awareness</li>
+                </ul>
+                <h3 class="subsection-title">Minor User Protection</h3>
+                <p>We pay special attention to the safety of minor users and implement the following measures:</p>
+                <ul>
+                    <li>Age verification at account registration: Users must declare their age during registration, and users under 13 will be refused registration</li>
+                    <li>Account deletion rights: Minor users may request to delete their account and related data at any time</li>
+                    <li>Parent contact: Parents may contact us if they discover misuse</li>
+                </ul>
+            </section>
+
+            <section id="section-3" class="section">
+                <h2 class="section-title">Data Collection and Privacy Protection</h2>
+                <h3 class="subsection-title">Information We Do Not Collect</h3>
+                <p>We <strong>explicitly do not collect</strong> the following personal information:</p>
+                <ul>
+                    <li><span class="badge error">✗</span> Precise location data (GPS, geolocation)</li>
+                    <li><span class="badge error">✗</span> Biometric information</li>
+                    <li><span class="badge error">✗</span> Device identifiers (except for account security purposes)</li>
+                </ul>
+                <h3 class="subsection-title">Minimized Information Collection</h3>
+                <p>To provide our services, we only collect:</p>
+                <ul>
+                    <li>Account information (username, email, password hash)</li>
+                    <li>User-generated content (posts, images, comments)</li>
+                    <li>Basic interaction data (likes, comment counts)</li>
+                    <li>Device type and OS version (for compatibility and crash reporting)</li>
+                </ul>
+                <h3 class="subsection-title">Third-Party Services</h3>
+                <p>We <strong>do not integrate</strong> third-party analytics SDKs, advertising networks, or data brokers. All user data is used only to improve app features and is not sold to third parties.</p>
+            </section>
+
+            <section id="section-4" class="section">
+                <h2 class="section-title">Social Interaction and Content Moderation</h2>
+                <h3 class="subsection-title">Social Features</h3>
+                <p><strong>Currently available features:</strong></p>
+                <ul>
+                    <li><span class="badge success">✓</span> Post publishing and commenting</li>
+                    <li><span class="badge success">✓</span> Likes and following</li>
+                    <li><span class="badge success">✓</span> @mentions of other users</li>
+                    <li><span class="badge success">✓</span> Tags and keyword search</li>
+                </ul>
+                <p><strong>Currently unavailable features:</strong></p>
+                <ul>
+                    <li><span class="badge error">✗</span> Direct messages (planned for future release with additional safety measures)</li>
+                </ul>
+                <h3 class="subsection-title">Content Moderation and Reporting</h3>
+                <p><strong>User Reporting Mechanism</strong></p>
+                <ul>
+                    <li>Users can report inappropriate content (harassment, hate speech, misinformation, etc.)</li>
+                    <li>Reporting process: Open post details → Click "Report" → Select reason → Submit</li>
+                    <li><strong>Processing time:</strong> We commit to reviewing reported content within 24-48 hours</li>
+                    <li>If violation is confirmed, the content will be deleted and/or the account will be disabled</li>
+                </ul>
+                <p><strong>AI-Generated Content Moderation</strong></p>
+                <ul>
+                    <li>All AI-generated images must pass human review before publication</li>
+                    <li>Review standards:
+                        <ul style="margin-top: var(--space-4);">
+                            <li><span class="badge success">✓</span> Allowed: Normal character depictions, creative scenes, artistic expression</li>
+                            <li><span class="badge error">✗</span> Prohibited: Inappropriate content, violence, hate speech, explicit content, child-related inappropriate content</li>
+                        </ul>
+                    </li>
+                    <li><strong>Violation found:</strong> Violating content will be immediately deleted, and users will receive a warning or account suspension</li>
+                </ul>
+                <p><strong>Violation Handling</strong></p>
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Violation Type</th>
+                                <th>Action Taken</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Minor violation (first offense)</td>
+                                <td>Content removal + user warning</td>
+                            </tr>
+                            <tr>
+                                <td>Moderate violation</td>
+                                <td>Content removal + account warning + temporary posting restriction</td>
+                            </tr>
+                            <tr>
+                                <td>Severe violation (child safety concern)</td>
+                                <td>Permanent content deletion + account suspension + record preservation</td>
+                            </tr>
+                            <tr>
+                                <td>Multiple violations</td>
+                                <td>Permanent account suspension</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="section-5" class="section">
+                <h2 class="section-title">Account Management and User Rights</h2>
+                <h3 class="subsection-title">Account Control</h3>
+                <p>Users have complete control over their accounts:</p>
+                <p><strong>Account Deletion</strong></p>
+                <ul>
+                    <li>Users can request to delete their account from settings at any time</li>
+                    <li>After deletion, personal information and content will be completely removed within 30 days</li>
+                    <li>Deleted accounts cannot be recovered</li>
+                </ul>
+                <p><strong>Content Deletion</strong></p>
+                <ul>
+                    <li>Users can delete any content they have posted (posts, comments, images)</li>
+                    <li>Deletion takes effect immediately</li>
+                </ul>
+                <p><strong>Privacy Settings</strong></p>
+                <ul>
+                    <li>Users can control whether their profile is public</li>
+                    <li>Users can choose to block specific users from following or interacting</li>
+                </ul>
+                <h3 class="subsection-title">Special Rights for Minors</h3>
+                <ul>
+                    <li>When minor users delete their account, the system will request confirmation and preserve evidence for future complaints</li>
+                    <li>Before account deletion, users can download all their data</li>
+                </ul>
+            </section>
+
+            <section id="section-6" class="section">
+                <h2 class="section-title">Data Security and Protection</h2>
+                <h3 class="subsection-title">Security Measures</h3>
+                <ul>
+                    <li><strong>Password Protection:</strong> Passwords are stored using encryption algorithms (bcrypt) and cannot be reverse-decrypted; users should not share their passwords</li>
+                    <li><strong>Transmission Security:</strong> All communication uses HTTPS encryption; API requests use JWT token authentication</li>
+                    <li><strong>Data Access Control:</strong> Only authorized employees can access user data (for moderation and technical support), and all access is logged</li>
+                    <li><strong>Regular Security Audits:</strong> We conduct regular security reviews and vulnerability testing; issues are fixed immediately when discovered</li>
+                </ul>
+                <h3 class="subsection-title">Data Retention and Deletion</h3>
+                <ul>
+                    <li><strong>Active accounts:</strong> Data is retained as long as the account exists</li>
+                    <li><strong>Deleted accounts:</strong> Data is completely deleted within 30 days</li>
+                    <li><strong>Report records:</strong> For safety reasons, report data is retained for a maximum of 1 year</li>
+                </ul>
+            </section>
+
+            <section id="section-7" class="section">
+                <h2 class="section-title">Account Suspension and Violations</h2>
+                <h3 class="subsection-title">Account Suspension Reasons</h3>
+                <p>Accounts may be suspended for:</p>
+                <ul>
+                    <li>Multiple instances of posting inappropriate content</li>
+                    <li>Harassing, threatening, or bullying other users</li>
+                    <li>Violations concerning child safety</li>
+                    <li>Repeatedly ignoring community guidelines</li>
+                </ul>
+                <h3 class="subsection-title">Appeal Process</h3>
+                <p>Suspended users can:</p>
+                <ol>
+                    <li>Email <strong>personaX@echo.tech</strong> to explain their situation</li>
+                    <li>Provide evidence of account behavior before suspension</li>
+                    <li>We will review and respond within 7 business days</li>
+                </ol>
+            </section>
+
+            <section id="section-8" class="section">
+                <h2 class="section-title">Parent and Guardian Guidelines</h2>
+                <h3 class="subsection-title">Recommendations for Parents</h3>
+                <ol>
+                    <li><strong>Communication:</strong> Discuss how to use the app and internet safety; explain what constitutes inappropriate content and how to report it</li>
+                    <li><strong>Account Supervision:</strong> Regularly review your child's posts and interactions; encourage them to share all interactions with strangers</li>
+                    <li><strong>Privacy Settings:</strong> Help your child configure privacy settings to limit access from strangers</li>
+                </ol>
+                <h3 class="subsection-title">Parent Complaints and Assistance</h3>
+                <p>If parents discover any content or behavior that endangers their child's safety:</p>
+                <ol>
+                    <li><strong>Direct Report:</strong> Use the in-app reporting feature to report inappropriate content</li>
+                    <li><strong>Contact Us:</strong> Use the "Contact Developer" feature within Google Play to send us an email</li>
+                    <li><strong>Request Deletion:</strong> We commit to taking action within 24 hours of confirming the issue</li>
+                </ol>
+            </section>
+
+            <section id="section-9" class="section">
+                <h2 class="section-title">Legal Compliance</h2>
+                <h3 class="subsection-title">COPPA Compliance</h3>
+                <p>PersonaX complies with the U.S. Children's Online Privacy Protection Act (COPPA):</p>
+                <ul>
+                    <li><span class="badge success">✓</span> Does not provide service to users under 13</li>
+                    <li><span class="badge success">✓</span> Does not collect personal information from users under 13</li>
+                    <li><span class="badge success">✓</span> Does not sell user data to third parties</li>
+                    <li><span class="badge success">✓</span> Users and parents may request to view or delete data at any time</li>
+                </ul>
+                <h3 class="subsection-title">GDPR Compliance</h3>
+                <p>For EU users, we comply with the General Data Protection Regulation:</p>
+                <ul>
+                    <li><span class="badge success">✓</span> Users have the right to access, correct, and delete their data</li>
+                    <li><span class="badge success">✓</span> We collect and process data only as necessary</li>
+                    <li><span class="badge success">✓</span> Users can withdraw consent at any time</li>
+                    <li><span class="badge success">✓</span> In case of data breach, we will report to authorities and users within 72 hours</li>
+                </ul>
+                <h3 class="subsection-title">DSA Compliance</h3>
+                <p>EU Digital Services Act requirements:</p>
+                <ul>
+                    <li><span class="badge success">✓</span> Provide transparent content moderation policy</li>
+                    <li><span class="badge success">✓</span> Users can report inappropriate content</li>
+                    <li><span class="badge success">✓</span> Users have appeal rights</li>
+                    <li><span class="badge success">✓</span> Publish transparency reports regularly</li>
+                </ul>
+            </section>
+
+            <section id="section-10" class="section">
+                <h2 class="section-title">Contact Us</h2>
+                <div class="highlight">
+                    <div class="highlight-title">Child Safety Issues</div>
+                    <p>Response time: 24-48 hours (business days)</p>
+                    <p>For child safety related issues, please use the "Contact Us" feature in the <strong>Google Play Store</strong> to send an email to the PersonaX developer. We will respond within 24-48 hours.</p>
+                </div>
+            </section>
+
+            <section id="section-11" class="section">
+                <h2 class="section-title">Appendix</h2>
+                <h3 class="subsection-title">A. Reportable Content Types</h3>
+                <p>Users can report the following content:</p>
+                <ul>
+                    <li>Harassment, threats, or bullying</li>
+                    <li>Hate speech or discrimination</li>
+                    <li>False or misleading information</li>
+                    <li>Spam</li>
+                    <li>Copyright infringement</li>
+                    <li>Violence or illegal content</li>
+                    <li>Child-related inappropriate content</li>
+                    <li>Other content violating community guidelines</li>
+                </ul>
+                <h3 class="subsection-title">B. Community Guidelines Summary</h3>
+                <p>All users agree to:</p>
+                <ol>
+                    <li>Respect others' privacy and rights</li>
+                    <li>Not post harassing, hate speech, or violent content</li>
+                    <li>Not impersonate others or commit fraud</li>
+                    <li>Comply with applicable laws</li>
+                    <li>Not disrupt the normal operation of the app</li>
+                </ol>
+                <p>Users who violate guidelines may be warned, restricted, or suspended.</p>
+                <h3 class="subsection-title">C. Policy Updates</h3>
+                <p>This policy may be updated periodically. When we make major changes, we will:</p>
+                <ol>
+                    <li>Notify users through in-app notifications</li>
+                    <li>Request user confirmation of the new policy</li>
+                    <li>Maintain previous versions for reference</li>
+                </ol>
+                <p style="margin-top: var(--space-12); padding-top: var(--space-8); border-top: 1px solid var(--gray-300);">
+                    <strong>Version</strong>: 1.0<br>
+                    <strong>Effective Date</strong>: May 14, 2026<br>
+                    <strong>Next Review Date</strong>: November 14, 2026
+                </p>
+            </section>
+        </main>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <span>&copy; 2026 TENSOR ART HK LIMITED. All rights reserved.</span>
+            <span>Last updated: May 14, 2026</span>
+        </div>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const tocLinks = document.querySelectorAll('.toc-link');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top < 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href').slice(1);
+                if (href === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
