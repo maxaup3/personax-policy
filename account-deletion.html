@@ -136,6 +136,35 @@
         background: var(--accent-dark);
       }
 
+      button:disabled {
+        cursor: not-allowed;
+        opacity: 0.68;
+      }
+
+      .status {
+        display: none;
+        border-radius: 6px;
+        padding: 12px 13px;
+        font-size: 14px;
+        line-height: 1.45;
+      }
+
+      .status[data-visible="true"] {
+        display: block;
+      }
+
+      .status[data-type="success"] {
+        background: #edf8f1;
+        color: #1f6b3b;
+        border: 1px solid #bfe5cc;
+      }
+
+      .status[data-type="error"] {
+        background: #fff0f3;
+        color: #9f2148;
+        border: 1px solid #f4b8ca;
+      }
+
       .fine-print {
         margin-top: 18px;
         font-size: 13px;
@@ -167,18 +196,7 @@
           ownership before processing the request.
         </p>
 
-        <form
-          action="https://formsubmit.co/personax@echo.tech"
-          method="POST"
-        >
-          <input
-            type="hidden"
-            name="_subject"
-            value="PersonaX Account Deletion Request"
-          />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_captcha" value="true" />
-
+        <form id="deletion-form">
           <label>
             PersonaX account email
             <input
@@ -210,6 +228,7 @@
           </label>
 
           <button type="submit">Submit Deletion Request</button>
+          <div class="status" role="status" aria-live="polite"></div>
         </form>
 
         <p class="fine-print">
@@ -219,5 +238,67 @@
         </p>
       </section>
     </main>
+    <script type="module">
+      import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+      const supabase = createClient(
+        "https://bluvokqdwwfebkbocijm.supabase.co",
+        "sb_publishable_ZW2sQQgpl78E_RDz-FZQew_k_IPRjKp"
+      );
+
+      const form = document.querySelector("#deletion-form");
+      const button = form.querySelector("button");
+      const status = form.querySelector(".status");
+
+      function setStatus(type, message) {
+        status.dataset.type = type;
+        status.dataset.visible = "true";
+        status.textContent = message;
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        status.dataset.visible = "false";
+        button.disabled = true;
+        button.textContent = "Submitting...";
+
+        const formData = new FormData(form);
+        const accountEmail = String(formData.get("account_email") || "").trim();
+        const details = String(formData.get("details") || "").trim();
+        const confirmation = formData.get("confirmation") === "on";
+
+        if (!confirmation) {
+          setStatus("error", "Please confirm the deletion request before submitting.");
+          button.disabled = false;
+          button.textContent = "Submit Deletion Request";
+          return;
+        }
+
+        const { error } = await supabase
+          .from("account_deletion_requests")
+          .insert({
+            account_email: accountEmail,
+            details,
+            source: "web",
+          });
+
+        button.disabled = false;
+        button.textContent = "Submit Deletion Request";
+
+        if (error) {
+          setStatus(
+            "error",
+            "Submission failed. Please check the account email and try again."
+          );
+          return;
+        }
+
+        form.reset();
+        setStatus(
+          "success",
+          "Your account deletion request has been submitted. PersonaX will review it within 30 days."
+        );
+      });
+    </script>
   </body>
 </html>
